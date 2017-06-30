@@ -1,0 +1,40 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<h4>Personal Account</h4>
+<h5>Sign in</h5>
+<%= form_tag({controller: 'users', action: 'sign_in'}, method: :post) do %>
+  <%= label_tag('Email') %>
+  <%= text_field_tag(:email) %>
+
+  <%= label_tag('Password') %>
+  <%= text_field_tag(:password) %>
+
+  <%= submit_tag('Submit') %>
+<% end %>
+
+<br />
+
+<h5>Sign up</h5>
+<%= form_tag({controller: 'users', action: 'sign_up'}, method: :post) do %>
+  <%= label_tag('Email') %>
+  <%= text_field_tag(:email) %>
+
+  <%= label_tag('Password') %>
+  <%= text_field_tag(:password) %>
+
+  <%= submit_tag('Submit') %>
+<% end %>
+
+<br /> <br />
+<h4>Organisation Account</h4>
+<h5>Sign in</h5>
+<%= form_tag({controller: 'org_users', action: 'sign_in'}, method: :post) do %>
+  <%= label_tag('Email') %>
+  <%= text_field_tag(:email) %>
+
+  <%= label_tag('Password') %>
+  <%= text_field_tag(:password) %>
+
+  <%= submit_tag('Submit') %>
+<% end %>
