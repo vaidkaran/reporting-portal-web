@@ -1,1 +1,5 @@
 <h2>In users/home.html.erb</h2>
+
+<% if @user_superadmin %>
+  <%= link_to "Superadmin Settings", superadmin_settings_index_path %>
+<% end %>

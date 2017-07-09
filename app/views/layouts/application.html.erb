@@ -11,13 +11,11 @@
   <% if @user_uid %>
     <%= "Signed in as: #{@user_uid}" %> <br />
     <%= link_to "Sign Out", user_sign_out_path %>
+    <%= link_to "Home", user_home_path %>
   <% elsif @org_user_uid %>
     <%= "Signed in as: #{@org_user_uid}" %> <br />
     <%= link_to "Sign Out", org_user_sign_out_path %>
-  <% end %>
-
-  <% if @user_superadmin %>
-    <%= link_to "Superadmin Settings", superadmin_settings_index_path %>
+    <%= link_to "Home", org_user_home_path %>
   <% end %>
 
   <body>
