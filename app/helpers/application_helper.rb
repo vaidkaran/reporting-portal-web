@@ -3,11 +3,22 @@ module ApplicationHelper
     'http://localhost:8080'
   end
 
+  def auth_headers
+    h = {}
+    h['access-token'] = cookies.encrypted[:access_token]
+    h['token-type']   = cookies.encrypted[:token_type]
+    h['expiry']       = cookies.encrypted[:expiry]
+    h['client']       = cookies.encrypted[:client]
+    h['uid']          = cookies.encrypted[:uid]
+    return h
+  end
+
   def auth_token_valid?
     begin
       res = RestClient.get "#{api_base_url}/auth/validate_token", auth_token_validation_params
       if res.code==200
         @user_uid ||= cookies.encrypted[:uid]
+        @user_superadmin = JSON(res.body)['data']['superadmin']
         return true
       else
         return false

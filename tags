@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:ReportingPortalWeb
+ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+OrgUsersController	app/controllers/org_users_controller.rb	/^class OrgUsersController < ApplicationController$/;"	c
+OrgUsersHelper	app/helpers/org_users_helper.rb	/^module OrgUsersHelper$/;"	m
+OrganisationalUsersControllerTest	test/controllers/organisational_users_controller_test.rb	/^class OrganisationalUsersControllerTest < ActionDispatch::IntegrationTest$/;"	c
+ReportingPortalWeb	config/application.rb	/^module ReportingPortalWeb$/;"	m
+UsersController	app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+UsersControllerTest	test/controllers/users_controller_test.rb	/^class UsersControllerTest < ActionDispatch::IntegrationTest$/;"	c
+UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+WelcomeController	app/controllers/welcome_controller.rb	/^class WelcomeController < ApplicationController$/;"	c
+WelcomeControllerTest	test/controllers/welcome_controller_test.rb	/^class WelcomeControllerTest < ActionDispatch::IntegrationTest$/;"	c
+WelcomeHelper	app/helpers/welcome_helper.rb	/^module WelcomeHelper$/;"	m
+api_base_url	app/helpers/application_helper.rb	/^  def api_base_url$/;"	f	class:ApplicationHelper
+auth_token_valid?	app/helpers/application_helper.rb	/^  def auth_token_valid?$/;"	f	class:ApplicationHelper
+auth_token_validation_params	app/helpers/application_helper.rb	/^  def auth_token_validation_params$/;"	f	class:ApplicationHelper
+authenticate_org_user	app/helpers/application_helper.rb	/^  def authenticate_org_user$/;"	f	class:ApplicationHelper
+authenticate_user	app/helpers/application_helper.rb	/^  def authenticate_user$/;"	f	class:ApplicationHelper
+delete_auth_cookies	app/helpers/application_helper.rb	/^  def delete_auth_cookies$/;"	f	class:ApplicationHelper
+home	app/controllers/org_users_controller.rb	/^  def home$/;"	f	class:OrgUsersController
+home	app/controllers/users_controller.rb	/^  def home$/;"	f	class:UsersController
+index	app/controllers/welcome_controller.rb	/^  def index$/;"	f	class:WelcomeController
+org_auth_token_valid?	app/helpers/application_helper.rb	/^  def org_auth_token_valid?$/;"	f	class:ApplicationHelper
+org_user_params	app/controllers/org_users_controller.rb	/^  def org_user_params$/;"	f	class:OrgUsersController
+set_auth_cookies	app/helpers/application_helper.rb	/^  def set_auth_cookies res_headers$/;"	f	class:ApplicationHelper
+sign_in	app/controllers/org_users_controller.rb	/^  def sign_in$/;"	f	class:OrgUsersController
+sign_in	app/controllers/users_controller.rb	/^  def sign_in$/;"	f	class:UsersController
+sign_out	app/controllers/org_users_controller.rb	/^  def sign_out$/;"	f	class:OrgUsersController
+sign_out	app/controllers/users_controller.rb	/^  def sign_out$/;"	f	class:UsersController
+sign_up	app/controllers/users_controller.rb	/^  def sign_up$/;"	f	class:UsersController
+system!	bin/setup	/^def system!(*args)$/;"	f
+system!	bin/update	/^def system!(*args)$/;"	f
+user_params	app/controllers/users_controller.rb	/^  def user_params$/;"	f	class:UsersController

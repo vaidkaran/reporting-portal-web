@@ -1,0 +1,15 @@
+<h4>superadmin_settings#index</h4>
+
+<%= form_tag(create_superadmin_url, method: :post) do %>
+  <%= label_tag 'Create Superadmin' %>
+  <%= text_field_tag :email %>
+  <%= submit_tag :submit %>
+<% end %>
+
+<br /> <br />
+
+<%= form_tag(destroy_superadmin_url, method: :post) do %>
+  <%= label_tag 'Destroy Superadmin' %>
+  <%= text_field_tag :email %>
+  <%= submit_tag :submit %>
+<% end %>
