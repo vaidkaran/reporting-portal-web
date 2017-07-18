@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   get 'org_users/home' => 'org_users#home', as: 'org_user_home'
 
   get 'superadmin_settings/index' => 'superadmin_settings#index', as: 'superadmin_settings_index'
+  get 'superadmin_settings/organisations' => 'superadmin_settings#organisations', as: 'superadmin_settings_organisations'
   post 'superadmin_settings/create_superadmin' => 'superadmin_settings#create_superadmin', as: 'create_superadmin'
   post 'superadmin_settings/destroy_superadmin' => 'superadmin_settings#destroy_superadmin', as: 'destroy_superadmin'
+  post 'superadmin_settings/create_organisation' => 'superadmin_settings#create_organisation', as: 'create_organisation'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

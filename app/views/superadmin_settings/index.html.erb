@@ -13,3 +13,11 @@
   <%= text_field_tag :email %>
   <%= submit_tag :submit %>
 <% end %>
+
+<br /> <br />
+
+<%= form_tag(create_organisation_url, method: :post) do %>
+  <%= label_tag 'Create Organisation' %>
+  <%= text_field_tag :org_name %>
+  <%= submit_tag :submit %>
+<% end %>

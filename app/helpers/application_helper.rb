@@ -17,7 +17,7 @@ module ApplicationHelper
     begin
       res = RestClient.get "#{api_base_url}/auth/validate_token", auth_token_validation_params
       if res.code==200
-        @user_uid ||= cookies.encrypted[:uid]
+        @user_uid = cookies.encrypted[:uid]
         @user_superadmin = JSON(res.body)['data']['superadmin']
         return true
       else
