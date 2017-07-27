@@ -1,5 +1,6 @@
 <h4>superadmin_settings#index</h4>
 
+<h4>Create superadmin</h4>
 <%= form_tag(create_superadmin_url, method: :post) do %>
   <%= label_tag 'Create Superadmin' %>
   <%= text_field_tag :email %>
@@ -8,6 +9,7 @@
 
 <br /> <br />
 
+<h4>Destroy superadmin</h4>
 <%= form_tag(destroy_superadmin_url, method: :post) do %>
   <%= label_tag 'Destroy Superadmin' %>
   <%= text_field_tag :email %>
@@ -16,8 +18,24 @@
 
 <br /> <br />
 
+<h4>Create organisation</h4>
 <%= form_tag(create_organisation_url, method: :post) do %>
   <%= label_tag 'Create Organisation' %>
   <%= text_field_tag :org_name %>
+  <%= submit_tag :submit %>
+<% end %>
+
+<br /> <br />
+
+<h4>Create organisation user</h4>
+<%= form_tag(create_org_user_url, method: :post) do %>
+  <%= label_tag :organisation %>
+  <%= select('', 'org_id', @orgs.map {|org| [org['name'], org['id']]}, {include_blank: :true}) %>
+  <%= label_tag :org_user_email %>
+  <%= text_field_tag :email %>
+  <%= label_tag :org_user_password %>
+  <%= text_field_tag :password %>
+  <%= label_tag :admin %>
+  <%= check_box_tag :admin %>
   <%= submit_tag :submit %>
 <% end %>

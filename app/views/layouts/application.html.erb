@@ -18,6 +18,10 @@
     <%= link_to "Home", org_user_home_path %>
   <% end %>
 
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "flash #{key}", style: "background-color:yellow") %>
+  <% end %>
+
   <body>
     <%= yield %>
   </body>

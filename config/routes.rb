@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post 'superadmin_settings/create_superadmin' => 'superadmin_settings#create_superadmin', as: 'create_superadmin'
   post 'superadmin_settings/destroy_superadmin' => 'superadmin_settings#destroy_superadmin', as: 'destroy_superadmin'
   post 'superadmin_settings/create_organisation' => 'superadmin_settings#create_organisation', as: 'create_organisation'
+  post 'superadmin_settings/create_org_user' => 'superadmin_settings#create_org_user', as: 'create_org_user'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
