@@ -28,7 +28,7 @@
 <br /> <br />
 
 <h4>Create organisation user</h4>
-<%= form_tag(create_org_user_url, method: :post) do %>
+<%= form_tag(superadmin_create_org_user_url, method: :post) do %>
   <%= label_tag :organisation %>
   <%= select('', 'org_id', @orgs.map {|org| [org['name'], org['id']]}, {include_blank: :true}) %>
   <%= label_tag :org_user_email %>

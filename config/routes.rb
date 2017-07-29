@@ -12,13 +12,15 @@ Rails.application.routes.draw do
   post 'org_users/sign_up' => 'org_users#sign_up', as: 'org_user_sign_up'
   get 'org_users/sign_out' => 'org_users#sign_out', as: 'org_user_sign_out'
   get 'org_users/home' => 'org_users#home', as: 'org_user_home'
+  post 'org_users/create_org_user' => 'org_users#create_org_user', as: 'org_admin_create_org_user'
+  get 'org_users/admin_settings' => 'org_users#admin_settings', as: 'org_admin_settings'
 
   get 'superadmin_settings/index' => 'superadmin_settings#index', as: 'superadmin_settings_index'
   get 'superadmin_settings/organisations' => 'superadmin_settings#organisations', as: 'superadmin_settings_organisations'
   post 'superadmin_settings/create_superadmin' => 'superadmin_settings#create_superadmin', as: 'create_superadmin'
   post 'superadmin_settings/destroy_superadmin' => 'superadmin_settings#destroy_superadmin', as: 'destroy_superadmin'
   post 'superadmin_settings/create_organisation' => 'superadmin_settings#create_organisation', as: 'create_organisation'
-  post 'superadmin_settings/create_org_user' => 'superadmin_settings#create_org_user', as: 'create_org_user'
+  post 'superadmin_settings/create_org_user' => 'superadmin_settings#create_org_user', as: 'superadmin_create_org_user'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,4 +1,7 @@
 module ApplicationHelper
+  attr_reader :current_org_user
+  attr_reader :current_user
+
   def api_base_url
     'http://localhost:8080'
   end
@@ -19,6 +22,7 @@ module ApplicationHelper
       if res.code==200
         @user_uid = cookies.encrypted[:uid]
         @user_superadmin = JSON(res.body)['data']['superadmin']
+        @current_user = JSON(res.body)['data'].symbolize_keys
         return true
       else
         return false
@@ -30,7 +34,7 @@ module ApplicationHelper
 
   def authenticate_user
     if !auth_token_valid?
-      render 'welcome/index'
+      redirect_to root_url
     end
   end
 
@@ -39,18 +43,19 @@ module ApplicationHelper
       res = RestClient.get "#{api_base_url}/org_auth/validate_token", auth_token_validation_params
       if res.code==200
         @org_user_uid ||= cookies.encrypted[:uid]
+        @current_org_user = JSON(res.body)['data'].symbolize_keys
         return true
       else
         return false
       end
-    rescue
+    rescue Exception => e
       return false
     end
   end
 
   def authenticate_org_user
     if !org_auth_token_valid?
-      render 'welcome/index'
+      redirect_to root_url
     end
   end
 
