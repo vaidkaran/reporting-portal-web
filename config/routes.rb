@@ -22,5 +22,7 @@ Rails.application.routes.draw do
   post 'superadmin_settings/create_organisation' => 'superadmin_settings#create_organisation', as: 'create_organisation'
   post 'superadmin_settings/create_org_user' => 'superadmin_settings#create_org_user', as: 'superadmin_create_org_user'
 
+  resources :reports
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

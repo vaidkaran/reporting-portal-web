@@ -3,3 +3,18 @@
 <% if @user_superadmin %>
   <%= link_to "Superadmin Settings", superadmin_settings_index_path %>
 <% end %>
+
+<% if @projects %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li>
+        <%= project['name'] %>
+        <ul>
+          <% project['test_categories'].each do |test_category| %>
+            <li> <%= link_to test_category['name'], reports_path(test_category_id: test_category['id']) %> </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

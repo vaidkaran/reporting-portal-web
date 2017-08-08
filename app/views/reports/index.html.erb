@@ -1,0 +1,9 @@
+<h4>Reports</h4>
+
+<% if @reports %>
+  <ul>
+    <% @reports.each do |report| %>
+      <li> <%= link_to report['created_at'], report_path(report['id']) %> </li>
+    <% end %>
+  </ul>
+<% end %>

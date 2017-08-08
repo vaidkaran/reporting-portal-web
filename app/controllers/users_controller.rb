@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user, only: :home
 
   def home
+    res = RestClient.get "#{api_base_url}/projects", auth_headers
+    if res.code==200
+      @projects = JSON(res)
+    end
   end
 
   def sign_in
