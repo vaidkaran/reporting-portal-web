@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post 'org_users/create_org_user' => 'org_users#create_org_user', as: 'org_admin_create_org_user'
   get 'org_users/admin_settings' => 'org_users#admin_settings', as: 'org_admin_settings'
 
+  # TODO: Fix the names (superadmin_settings_index can be just superadmin_settings)
   get 'superadmin_settings/index' => 'superadmin_settings#index', as: 'superadmin_settings_index'
   get 'superadmin_settings/organisations' => 'superadmin_settings#organisations', as: 'superadmin_settings_organisations'
   post 'superadmin_settings/create_superadmin' => 'superadmin_settings#create_superadmin', as: 'create_superadmin'
@@ -22,7 +23,14 @@ Rails.application.routes.draw do
   post 'superadmin_settings/create_organisation' => 'superadmin_settings#create_organisation', as: 'create_organisation'
   post 'superadmin_settings/create_org_user' => 'superadmin_settings#create_org_user', as: 'superadmin_create_org_user'
 
+  get 'org_settings/index' => 'org_settings#index', as: 'org_settings'
+  post 'org_settings/create_org_user' => 'org_settings#create_org_user', as: 'org_settings_create_org_user'
+  post 'org_settings/create_project' => 'org_settings#create_project', as: 'org_settings_create_project'
+  post 'org_settings/create_test_category' => 'org_settings#create_test_category', as: 'org_settings_create_test_category'
+
   resources :reports
+  resources :projects, only: [:create]
+  resources :test_categories, only: [:create]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

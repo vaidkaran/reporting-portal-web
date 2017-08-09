@@ -1,9 +1,0 @@
-<h4>Create a user</h4>
-<%= form_tag(org_admin_create_org_user_url, method: :post) do %>
-  <%= label_tag :org_user_email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :org_user_password %>
-  <%= text_field_tag :password %>
-  <%= submit_tag :submit %>
-<% end %>
-

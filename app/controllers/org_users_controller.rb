@@ -1,25 +1,11 @@
 class OrgUsersController < ApplicationController
-  before_action :authenticate_org_user, only: [:home, :create_org_user, :admin_settings]
-  before_action :only_org_user_admin, only: [:create_org_user, :admin_settings]
+ before_action :authenticate_org_user, only: [:home]
 
   def home
     res = RestClient.get "#{api_base_url}/projects", auth_headers
     if res.code==200
       @projects = JSON(res)
     end
-  end
-
-  def admin_settings
-  end
-
-  def create_org_user
-    res = RestClient.post "#{api_base_url}/org_auth", create_org_user_params, auth_headers
-    if res.code==200
-      flash[:notice] = 'Successfully created org user'
-    else
-      flash[:notice] = 'Something went wrong. Could not create org user'
-    end
-    redirect_to org_admin_settings_url
   end
 
   def sign_in
@@ -50,13 +36,4 @@ class OrgUsersController < ApplicationController
     params.permit(:email, :password).to_h
   end
 
-  def create_org_user_params
-    return {organisation_id: current_org_user[:organisation_id], email: params[:email], password: params[:password], admin: false}
-  end
-
-  def only_org_user_admin
-    unless current_org_user[:admin]
-      render json: {'error': 'Unauthorized'}
-    end
-  end
 end

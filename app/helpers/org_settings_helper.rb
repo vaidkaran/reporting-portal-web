@@ -1,0 +1,2 @@
+module OrgSettingsHelper
+end
