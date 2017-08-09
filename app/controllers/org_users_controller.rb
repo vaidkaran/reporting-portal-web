@@ -3,6 +3,10 @@ class OrgUsersController < ApplicationController
   before_action :only_org_user_admin, only: [:create_org_user, :admin_settings]
 
   def home
+    res = RestClient.get "#{api_base_url}/projects", auth_headers
+    if res.code==200
+      @projects = JSON(res)
+    end
   end
 
   def admin_settings
