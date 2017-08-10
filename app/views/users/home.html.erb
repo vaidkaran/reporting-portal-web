@@ -2,6 +2,8 @@
   <%= link_to "Superadmin Settings", superadmin_settings_index_path %>
 <% end %>
 
+<%= link_to "Settings", user_settings_url %>
+
 <% if @projects %>
   <ul>
     <% @projects.each do |project| %>
@@ -16,3 +18,4 @@
     <% end %>
   </ul>
 <% end %>
+

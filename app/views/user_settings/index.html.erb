@@ -1,0 +1,17 @@
+<h4>Create a new project</h4>
+<%= form_tag(user_settings_create_project_url, method: :post) do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <%= submit_tag :submit %>
+<% end %>
+
+<br /> <br />
+
+<h4>Create test category</h4>
+<%= form_tag(user_settings_create_test_category_url, method: :post) do %>
+  <%= label_tag :project %>
+  <%= select('', 'project_id', @projects.map {|project| [project['name'], project['id']]}, {include_blank: :true}) %>
+  <%= label_tag :test_category_name %>
+  <%= text_field_tag :name %>
+  <%= submit_tag :submit %>
+<% end %>

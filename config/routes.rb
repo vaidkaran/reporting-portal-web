@@ -28,9 +28,11 @@ Rails.application.routes.draw do
   post 'org_settings/create_project' => 'org_settings#create_project', as: 'org_settings_create_project'
   post 'org_settings/create_test_category' => 'org_settings#create_test_category', as: 'org_settings_create_test_category'
 
+  get 'user_settings/index' => 'user_settings#index', as: 'user_settings'
+  post 'user_settings/create_project' => 'user_settings#create_project', as: 'user_settings_create_project'
+  post 'user_settings/create_test_category' => 'user_settings#create_test_category', as: 'user_settings_create_test_category'
+
   resources :reports
-  resources :projects, only: [:create]
-  resources :test_categories, only: [:create]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
