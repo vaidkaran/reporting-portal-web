@@ -1,4 +1,6 @@
-<%= link_to "Admin Settings", org_settings_url %>
+<% if current_org_user[:admin] %>
+  <%= link_to "Admin Settings", org_settings_url %>
+<% end %>
 
 <% if @projects %>
   <ul>
