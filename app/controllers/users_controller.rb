@@ -15,11 +15,11 @@ class UsersController < ApplicationController
         set_auth_cookies(res.headers)
         redirect_to user_home_url
       else
-        # Display a flash message
+        flash[:notice] = 'Email and password don\'t match.'
         redirect_to root_url
       end
     rescue
-      # Display a flash message
+      flash[:notice] = 'Email and password don\'t match.'
       redirect_to root_url
     end
   end

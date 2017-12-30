@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>ReportingPortalWeb</title>
     <%= csrf_meta_tags %>
 
@@ -8,18 +10,45 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <% if @user_uid %>
-    <%= "Signed in as: #{@user_uid}" %> <br />
-    <%= link_to "Sign Out", user_sign_out_path %>
-    <%= link_to "Home", user_home_path %>
-  <% elsif @org_user_uid %>
-    <%= "Signed in as: #{@org_user_uid}" %> <br />
-    <%= link_to "Sign Out", org_user_sign_out_path %>
-    <%= link_to "Home", org_user_home_path %>
-  <% end %>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <b> <%= link_to "RP", user_home_path, {class: "navbar-brand"} %> </b>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Home", user_home_path, {class: "nav-link"} %>
+        </li>
+
+        <% if @current_user || @current_org_user %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <% if @current_user %>
+                <%= "#{@current_user[:email]}" %>
+              <% elsif @current_org_user %>
+                <%= "#{@current_org_user[:email]}" %>
+              <% end %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <% if @current_user %>
+                <%= link_to "Sign Out", user_sign_out_path, {class: "dropdown-item"} %>
+              <% elsif @current_org_user %>
+                <%= link_to "Sign Out", org_user_sign_out_path, {class: "dropdown-item"} %>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+
+      </ul>
+    </div>
+  </nav>
+
 
   <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "flash #{key}", style: "background-color:yellow") %>
+    <%= content_tag(:div, value, class: "alert alert-info", role: "alert" ) %>
   <% end %>
 
   <body>
