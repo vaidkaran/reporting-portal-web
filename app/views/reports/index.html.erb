@@ -1,5 +1,11 @@
 <h4>Reports</h4>
 
+<%= form_tag({controller: 'reports', action: 'create'}, method: :post, multipart: true) do %>
+  <%= file_field_tag 'xml_upload' %>
+  <%= submit_tag 'Submit' %>
+  <%= hidden_field_tag 'test_category_id', params[:test_category_id] %>
+<% end %>
+
 <% if @reports %>
   <ul>
     <% @reports.each do |report| %>
