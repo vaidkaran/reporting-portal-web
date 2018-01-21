@@ -11,7 +11,15 @@
 <%= form_tag(user_settings_create_test_category_url, method: :post) do %>
   <%= label_tag :project %>
   <%= select('', 'project_id', @projects.map {|project| [project['name'], project['id']]}, {include_blank: :true}) %>
+
   <%= label_tag :test_category_name %>
   <%= text_field_tag :name %>
+
+  <%= label_tag :report_type %>
+  <%= select('', 'report_type', ['junit', 'mocha'], {include_blank: :false}) %>
+
+  <%= label_tag :report_format %>
+  <%= select('', 'report_format', ['xml', 'json'], {include_blank: :false}) %>
+
   <%= submit_tag :submit %>
 <% end %>

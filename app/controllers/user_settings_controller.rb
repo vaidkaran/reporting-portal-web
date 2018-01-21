@@ -34,6 +34,6 @@ class UserSettingsController < ApplicationController
   end
 
   def test_category_params
-    {name: params[:name], project_id: params[:project_id]}
+    {name: params[:name], project_id: params[:project_id], report_type: params[:report_type], report_format: params[:report_format]}
   end
 end
