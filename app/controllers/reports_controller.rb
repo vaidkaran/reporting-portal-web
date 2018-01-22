@@ -25,6 +25,6 @@ class ReportsController < ApplicationController
 
   private
   def create_report_params
-    {project_name: 'test project', test_category: 'unit tests', report_type: 'junit', report_format: 'xml', upload: params['xml_upload'].tempfile}
+    {test_category_id: params[:test_category_id], upload: params[:xml_upload].tempfile}
   end
 end
