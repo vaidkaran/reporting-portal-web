@@ -9,7 +9,7 @@ class ReportsController < ApplicationController
   def show
     res = RestClient.get "#{api_base_url}/reports/#{params[:id]}", auth_headers
     if res.code==200
-      @report = JSON(res)
+      @report = JSON(res, symbolize_names: true)
     end
   end
 
