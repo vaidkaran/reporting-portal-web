@@ -1,0 +1,164 @@
+<html>
+  <style>td {overflow:hidden;}</style>
+  <head></head>
+  <body>
+    <table id='header_Header' style='table-layout:fixed' width='100%'>
+      <td style='font-weight: bold; font-size: 12px; font-style:normal; font-family: Arial; color: #444444;'></td>
+      <td width='30%'><img style='float: right: float: left; margin-top: 1px;' src=''></td>
+      <td width='40%'>
+        <h2 style='font-weight: bold; font-style:normal; font-family: Arial; color: 444444;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result Summary</h2>
+      </td>
+      <td width='15%' style='font-weight: bold; font-style:normal; font-family: Arial; color: 444444;'>
+        <center>Browser: TODO</center>
+      </td>
+      <td width='10%' style='font-weight: bold; font-style:normal; font-family: Arial; color: 444444;'>
+        <center>Env: TODO</center>
+      </td>
+      <td width='10%' style='font-weight: bold; font-style:normal; font-family: Arial; color: 444444;'>
+        <!-- <center> <%= @report[:junit_test_suite_group][:junit_test_suites].first[:timestamp] %> </center> -->
+        <center> <%= TestNG here! %> </center>
+      </td>
+    </table>
+    <table  id='header' style='table-layout:fixed' width='100%'>
+      <tr style='font-weight: bold; font-size: 14px; font-style:normal; font-family: Arial; color: white; background-color: #444444'>
+        <td width='2%'>
+          <center>No.</center>
+        </td>
+        <td width='35%'>
+          <center>Test Suite Name</center>
+        </td>
+        <td width='5%'>
+          <center>Total</center>
+        </td>
+        <td width='4%'>
+          <center>Pass</center>
+        </td>
+        <td width='4%'>
+          <center>Fail</center>
+        </td>
+        <td width='7%'>
+          <center>Warning</center>
+        </td>
+        <td width='7%'>
+          <center>Duration</center>
+        </td>
+        <td width='10%'>
+          <center>Pass%</center>
+        </td>
+        <td width='11%'>
+          <center>Adjusted Pass%</center>
+        </td>
+        <td width='15%'>
+          <center>Details</center>
+        </td>
+      </tr>
+    </table>
+    <!-- ============================================================================================================ -->
+    <!-- to be iterated -->
+
+    <!-- 
+    <% test_suite_counter=1 %>
+    <% @report[:junit_test_suite_group][:junit_test_suites].each do |test_suite| %>
+      <table style='table-layout:fixed' width='100%'>
+        <tr style='font-family: Arial; background-color: #cdcdc1'>
+
+          <!-- serial number -->
+          <td width='2%' style='font-weight: normal; font-size: 12px; font-style:normal; color: black'>
+            <center><%= test_suite_counter %></center>
+          </td>
+
+          <!-- test suite name -->
+          <td width='35%' style='font-weight: normal; font-size: 12px; font-style:normal; color: black'><a target='_blank'> <%= test_suite[:name] %> </a></td>
+
+          <!-- total test case count -->
+          <td width='5%' style='font-weight: bold; font-size: 12px; font-style:normal; '>
+            <span id='span_1' style='color: black;'>
+              <center> <%= test_suite[:tests] %> </center>
+            </span>
+          </td>
+
+          <!-- num of tests passed -->
+          <td width='4%' style='font-weight: bold; font-size: 12px; font-style:normal; '>
+            <span id='span_2' style='color: green;'>
+              <center><%= test_suite[:tests] - test_suite[:failures] %></center>
+            </span>
+          </td>
+
+          <!-- num of tests failed -->
+          <td width='4%' style='font-weight: normal; font-size: 12px; font-style:normal; color: red'>
+            <center><%= test_suite[:failures] %></center>
+          </td>
+
+          <!-- warning -->
+          <td width='7%' style='font-weight: normal; font-size: 12px; font-style:normal; color: black'>
+            <center>-</center>
+          </td>
+
+          <!-- duration -->
+          <td width='7%' style='font-weight: normal; font-size: 12px; font-style:normal; color: black'>
+            <center><%= test_suite[:time] %></center>
+          </td>
+
+          <!-- pass % -->
+          <td width='10%' style='font-weight: normal; font-size: 12px; font-style:normal; color: green'>
+            <center>- <img src='' title='+0'></img></center>
+          </td>
+
+          <!-- adjusted pass % -->
+          <td width='11%' style='font-weight: normal; font-size: 12px; font-style:normal; color: green'>
+            <center>- <img src='' title= '+0'> </img></center>
+          </td>
+
+          <!-- details -->
+          <td width='15%' style='font-weight: normal; font-size: 12px; font-style:normal; color: black'>
+            <center><a target='_blank'>Full</a>&nbsp;/&nbsp;<a target='_blank'>Failure Reasons</a></center>
+          </td>
+        </tr>
+      </table>
+      <% test_suite_counter+=1 %>
+    <% end %>
+    -->
+
+    <!-- ============================================================================================================ -->
+    <table style='table-layout:fixed' width='100%'>
+      <tr style='font-family: Arial; background-color: #444444'>
+        <td width='2%' style='font-weight: normal; font-size: 12px; font-style:normal; color: black'>
+          <center>
+        </td>
+        <td width='35%' style='font-weight: normal; font-size: 14px; font-style:normal; color: white'><b>TOTAL</b></td>
+        <td width='5%' style='font-weight: bold; font-size: 14px; font-style:normal; '>
+          <span id='span_1' style='color: white;'>
+            <center>104
+          </span>
+          </center>
+        </td>
+        <td width='4%' style='font-weight: bold; font-size: 14px; font-style:normal; '>
+          <span id='span_2' style='color: white;'>
+            <center>68
+          </span>
+          </center>
+        </td>
+        <td width='4%' style='font-weight: bold; font-size: 14px; font-style:normal; color: white'>
+          <center>0</center>
+        </td>
+        <td width='7%' style='font-weight: bold; font-size: 14px; font-style:normal; color: white'>
+          <center>36</center>
+        </td>
+        <td width='7%' style='font-weight: bold; font-size: 14px; font-style:normal; color: white'>
+          <center>00:12:39</center>
+        </td>
+        <td width='10%' style='font-weight: bold; font-size: 14px; font-style:normal; color: white'>
+          <center>100%</center>
+        </td>
+        <td width='11%' style='font-weight: bold; font-size: 14px; font-style:normal; color: white'>
+          <center>100%</center>
+        </td>
+        <td width='15%' style='font-weight: bold; font-size: 14px; font-style:normal; color: white'>
+          <center></center>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

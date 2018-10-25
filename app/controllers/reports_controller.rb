@@ -10,6 +10,11 @@ class ReportsController < ApplicationController
     res = RestClient.get "#{api_base_url}/reports/#{params[:id]}", auth_headers
     if res.code==200
       @report = JSON(res, symbolize_names: true)
+      test_category = RestClient.get "#{api_base_url}/test_categories/#{@report[:test_category_id]}", auth_headers
+      test_category = JSON(test_category, symbolize_names: true)
+      if test_category[:report_type] == 'testng'
+        render 'testng'
+      end
     end
   end
 
