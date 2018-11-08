@@ -15,8 +15,8 @@
         <center>Env: TODO</center>
       </td>
       <td width='10%' style='font-weight: bold; font-style:normal; font-family: Arial; color: 444444;'>
-        <!-- <center> <%= @report[:junit_test_suite_group][:junit_test_suites].first[:timestamp] %> </center> -->
-        <center> <%= TestNG here! %> </center>
+        <center> Duration </center>
+        <center> <%= @report[:testng_result][:testng_suites].first[:duration_ms] %>ms </center>
       </td>
     </table>
     <table  id='header' style='table-layout:fixed' width='100%'>
@@ -25,7 +25,7 @@
           <center>No.</center>
         </td>
         <td width='35%'>
-          <center>Test Suite Name</center>
+          <center>Test Group Name</center>
         </td>
         <td width='5%'>
           <center>Total</center>
@@ -56,37 +56,37 @@
     <!-- ============================================================================================================ -->
     <!-- to be iterated -->
 
-    <!-- 
-    <% test_suite_counter=1 %>
-    <% @report[:junit_test_suite_group][:junit_test_suites].each do |test_suite| %>
+    <!--
+    <% test_group_counter = 1 %>
+    <% @report[:testng_result][:testng_suites].first[:testng_groups].each do |test_group| %>
       <table style='table-layout:fixed' width='100%'>
         <tr style='font-family: Arial; background-color: #cdcdc1'>
 
           <!-- serial number -->
           <td width='2%' style='font-weight: normal; font-size: 12px; font-style:normal; color: black'>
-            <center><%= test_suite_counter %></center>
+            <center><%= test_group_counter  %></center>
           </td>
 
-          <!-- test suite name -->
-          <td width='35%' style='font-weight: normal; font-size: 12px; font-style:normal; color: black'><a target='_blank'> <%= test_suite[:name] %> </a></td>
+          <!-- test group name -->
+          <td width='35%' style='font-weight: normal; font-size: 12px; font-style:normal; color: black'><a target='_blank'> <%= test_group[:name] %> </a></td>
 
           <!-- total test case count -->
           <td width='5%' style='font-weight: bold; font-size: 12px; font-style:normal; '>
             <span id='span_1' style='color: black;'>
-              <center> <%= test_suite[:tests] %> </center>
+              <%#<center> <%= test_group[:tests] %> </center>%>
             </span>
           </td>
 
           <!-- num of tests passed -->
           <td width='4%' style='font-weight: bold; font-size: 12px; font-style:normal; '>
             <span id='span_2' style='color: green;'>
-              <center><%= test_suite[:tests] - test_suite[:failures] %></center>
+              <%#<center><%= test_group[:tests] - test_group[:failures] %></center>%>
             </span>
           </td>
 
           <!-- num of tests failed -->
           <td width='4%' style='font-weight: normal; font-size: 12px; font-style:normal; color: red'>
-            <center><%= test_suite[:failures] %></center>
+            <%#<center><%= test_group[:failures] %></center>%>
           </td>
 
           <!-- warning -->
@@ -96,7 +96,7 @@
 
           <!-- duration -->
           <td width='7%' style='font-weight: normal; font-size: 12px; font-style:normal; color: black'>
-            <center><%= test_suite[:time] %></center>
+            <%#<center><%= test_group[:time] %></center>%>
           </td>
 
           <!-- pass % -->
@@ -115,7 +115,7 @@
           </td>
         </tr>
       </table>
-      <% test_suite_counter+=1 %>
+      <% test_group_counter +=1 %>
     <% end %>
     -->
 
